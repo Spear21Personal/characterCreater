@@ -1,0 +1,36 @@
+{
+   "name": "characterapi",
+   "version": "0.0.1",
+   "description": "Character API with typeorm and swagger",
+   "devDependencies": {
+      "@types/body-parser": "^1.19.0",
+      "@types/dotenv": "^8.2.0",
+      "@types/express": "^4.17.8",
+      "@types/mysql": "^2.15.19",
+      "@types/node": "^8.0.29",
+      "@types/swagger-ui-express": "^4.1.2"
+   },
+   "dependencies": {
+      "body-parser": "^1.19.0",
+      "cors": "^2.8.5",
+      "dotenv": "^8.2.0",
+      "express": "^4.17.1",
+      "lowdb": "^1.0.0",
+      "mysql": "^2.14.1",
+      "mysql2": "^2.3.3",
+      "nanoid": "^3.1.20",
+      "prettier": "^2.4.1",
+      "reflect-metadata": "^0.1.10",
+      "swagger-ui-express": "^4.1.6",
+      "ts-node": "3.3.0",
+      "tsoa": "^3.14.0",
+      "typeorm": "^0.2.38",
+      "typescript": "3.3.3333"
+   },
+   "scripts": {
+      "start": "ts-node src/index.ts",
+      "serve": "nodemon src/index.ts",
+      "build": " tsc -b",
+      "build-prod": "rm -rf build && prettier --write src/ && tsc && pm2 startOrGracefulReload build/index.js --env production"
+   }
+}

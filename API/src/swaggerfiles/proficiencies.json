@@ -1,0 +1,130 @@
+{
+    "schemas": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "The AlProficienciesignment Name"
+            },
+            "type": {
+                "type": "string",
+                "description": " Basic description of the Proficiencies"
+            },
+            "class_id_1": {
+                "type": "string",
+                "description": " Class ID that can have this proficiency"
+            },
+            "class_name_1": {
+                "type": "string",
+                "description": " Class Name that can have this proficiency"
+            },
+            "class_id_2": {
+                "type": "string",
+                "description": " Class ID that can have this proficiency"
+            },
+            "class_name_2": {
+                "type": "string",
+                "description": " Class Name that can have this proficiency"
+            },
+            "class_id_3": {
+                "type": "string",
+                "description": " Class ID that can have this proficiency"
+            },
+            "class_name_3": {
+                "type": "string",
+                "description": " Class Name that can have this proficiency"
+            },
+            "class_id_4": {
+                "type": "string",
+                "description": " Class ID that can have this proficiency"
+            },
+            "class_name_4": {
+                "type": "string",
+                "description": " Class Name that can have this proficiency"
+            },
+            "class_id_5": {
+                "type": "string",
+                "description": " Class ID that can have this proficiency"
+            },
+            "class_name_5": {
+                "type": "string",
+                "description": " Class Name that can have this proficiency"
+            },
+            "class_id_6": {
+                "type": "string",
+                "description": " Class ID that can have this proficiency"
+            },
+            "class_name_6": {
+                "type": "string",
+                "description": " Class Name that can have this proficiency"
+            },
+            "class_id_7": {
+                "type": "string",
+                "description": " Class ID that can have this proficiency"
+            },
+            "class_name_7": {
+                "type": "string",
+                "description": " Class Name that can have this proficiency"
+            },
+            "class_id_8": {
+                "type": "string",
+                "description": " Class ID that can have this proficiency"
+            },
+            "class_name_8": {
+                "type": "string",
+                "description": " Class Name that can have this proficiency"
+            },
+            "class_id_9": {
+                "type": "string",
+                "description": " Class ID that can have this proficiency"
+            },
+            "class_name_9": {
+                "type": "string",
+                "description": " Class Name that can have this proficiency"
+            },
+            "race_id_1": {
+                "type": "string",
+                "description": " Race ID that can have this proficiency"
+            },
+            "race_name_1": {
+                "type": "string",
+                "description": " Race Name that can have this proficiency"
+            },
+            "reference_id": {
+                "type": "string",
+                "description": " Reference ID "
+            },
+            "reference_name": {
+                "type": "string",
+                "description": " Reference Name "
+            }
+        }
+    },
+    "examples": {
+        "id": 1,
+        "name": "",
+        "type": "",
+        "class_id_1": "",
+        "class_name_1": "",
+        "class_id_2": "",
+        "class_name_2": "",
+        "class_id_3": "",
+        "class_name_3": "",
+        "class_id_4": "",
+        "class_name_4": "",
+        "class_id_5": "",
+        "class_name_5": "",
+        "class_id_6": "",
+        "class_name_6": "",
+        "class_id_7": "",
+        "class_name_7": "",
+        "class_id_8": "",
+        "class_name_8": "",
+        "class_id_9": "",
+        "class_name_9": "",
+        "race_id_1": "",
+        "race_name_1": "",
+        "reference_id": "",
+        "reference_name": ""
+    }
+}

@@ -1,0 +1,37 @@
+node () {
+    stage('Get Git') {
+        checkout scm
+    }
+    stage('Install modules') {
+        nodejs('nodejs'){
+            sh 'npm install'
+            echo "Modules Installed"
+        }
+
+    }
+    stage('Test'){
+      nodejs('nodejs'){
+        echo "Test Complete"
+      }
+    }
+    
+    stage('Build') {
+        nodejs('nodejs'){
+            sh 'npm run-script build-prod'
+            echo "Build Complete"
+        }
+
+    }
+   
+    
+}
+
+node('portfolio-server') {
+   
+   // sh 'sudo npm install pm2@latest -g'
+    echo 'Copy'
+    // sh 'yes | sudo cp -R bundle.tar.gz /var/www/html && cd /var/www/html && sudo tar -xvf bundle.tar.gz'
+    // sh 'yes | sudo cp -R build/ /var/www/api && cd build && pm2 startOrGracefulReload index.js'
+    echo ' Complete'
+
+}

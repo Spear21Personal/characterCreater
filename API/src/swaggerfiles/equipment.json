@@ -1,0 +1,190 @@
+{
+    "schemas": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": ""
+            },
+            "category_id": {
+                "type": "string",
+                "description": " "
+            },
+            "weapon_category_id": {
+                "type": "number",
+                "description": " "
+            },
+            "cost_quantity": {
+                "type": "number",
+                "description": ""
+            },
+            "cost_unit": {
+                "type": "string",
+                "description": ""
+            },
+            "damage_dice": {
+                "type": "string",
+                "description": ""
+            },
+            "damage_type": {
+                "type": "string",
+                "description": ""
+            },
+            "range": {
+                "type": "number",
+                "description": ""
+            },
+            "weight": {
+                "type": "number",
+                "description": ""
+            },
+            "properties_1": {
+                "type": "string",
+                "description": ""
+            },
+            "properties_2": {
+                "type": "string",
+                "description": ""
+            },
+            "properties_3": {
+                "type": "string",
+                "description": ""
+            },
+            "properties_4": {
+                "type": "string",
+                "description": ""
+            },
+            "throw_range": {
+                "type": "number",
+                "description": ""
+            },
+            "throw_range_long": {
+                "type": "number",
+                "description": ""
+            },
+            "two_handed_damage_dice": {
+                "type": "string",
+                "description": ""
+            },
+            "two_handed_damage_type": {
+                "type": "string",
+                "description": ""
+            },
+            "range_long": {
+                "type": "number",
+                "description": ""
+            },
+            "special": {
+                "type": "string",
+                "description": ""
+            },
+            "armor_category_id": {
+                "type": "number",
+                "description": ""
+            },
+            "armor_class": {
+                "type": "string",
+                "description": ""
+            },
+            "armor_class_dex_bonus": {
+                "type": "string",
+                "description": ""
+            },
+            "str_minimum": {
+                "type": "number",
+                "description": ""
+            },
+            "stealth_disadvantage": {
+                "type": "string",
+                "description": ""
+            },
+            "armor_class_max_bonus": {
+                "type": "number",
+                "description": ""
+            },
+            "gear_category_id": {
+                "type": "number",
+                "description": ""
+            },
+            "desc_1": {
+                "type": "string",
+                "description": ""
+            },
+            "desc_2": {
+                "type": "string",
+                "description": ""
+            },
+            "desc_3": {
+                "type": "string",
+                "description": ""
+            },
+            "desc_4": {
+                "type": "string",
+                "description": ""
+            },
+            "desc_5": {
+                "type": "string",
+                "description": ""
+            },
+            "tool_category_id": {
+                "type": "number",
+                "description": ""
+            },
+            "vehicle_category_id": {
+                "type": "number",
+                "description": ""
+            },
+            "speed_quantity": {
+                "type": "number",
+                "description": ""
+            },
+            "speed_unit": {
+                "type": "string",
+                "description": ""
+            },
+            "capacity": {
+                "type": "string",
+                "description": ""
+            }
+        }
+    },
+    "examples": {
+        "id": 1,
+        "name": "",
+        "category_id": "",
+        "weapon_category_id": "",
+        "cost_quantity": "",
+        "cost_unit": "",
+        "damage_dice": "",
+        "damage_type": "",
+        "range": "",
+        "weight": "",
+        "properties_1":"",
+        "properties_2": "",
+        "properties_3": "",
+        "properties_4": "",
+        "throw_range": "",
+        "throw_range_long": "",
+        "two_handed_damage_dice": "",
+        "two_handed_damage_type": "",
+        "range_long": "",
+        "special": "",
+        "armor_category_id": "",
+        "armor_class": "",
+        "armor_class_dex_bonus": "",
+        "str_minimum": "",
+        "stealth_disadvantage": "",
+        "armor_class_max_bonus": "",
+        "gear_category_id": "",
+        "desc_1": "",
+        "desc_2": "",
+        "desc_3": "",
+        "desc_4": "",
+        "desc_5": "",
+        "tool_category_id": "",
+        "vehicle_category_id": "",
+        "speed_quantity": "",
+        "speed_unit": "",
+        "capacity": ""
+    }
+}
