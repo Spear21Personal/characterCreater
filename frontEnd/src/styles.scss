@@ -1,5 +1,13 @@
 @import "./styles/animate-colors";
+@import "./styles/gradient-background";
+@import "./styles/reusable";
+@import "./styles/variables";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .main-background {
    background-image:  url('./assets/wallpaperShadow.jpg');
@@ -17,5 +25,23 @@
   top: 0;
   left: 0;
   }
+h1 {
+  color: white;
 
+}
+  .card {
+    background-color: white;
+    border-radius: 5px;
+    opacity: .5;
+    padding: 5px;
+  }
+
+  .logo {
+    max-height: 80px;;
+  }
+
+  .header {
+    background-color: aliceblue;
+    opacity: .5;
+  }
 

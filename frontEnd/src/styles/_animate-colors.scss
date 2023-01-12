@@ -1,0 +1,35 @@
+$timing-functions: linear, ease-in, ease-out, ease-in-out;
+$max-timing-function: length($timing-functions);
+$min-duration: 5s;
+$max-duration: 10s;
+
+[class^="st"] {
+  fill: none;
+  stroke: #060ccb;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-opacity: 0;
+  stroke-width: .001%;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+@for $i from 0 through 193 {
+  .st#{$i} {
+    $random-duration: $min-duration + (($max-duration - $min-duration) * random());
+    $random-timing-function: nth($timing-functions, floor(random() * $max-timing-function) + 1);
+    animation-duration:  $random-duration;
+    animation-name: draw;
+    animation-timing-function: $random-timing-function;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: 5;
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke: #49044a;
+    stroke-dashoffset: 0;
+    stroke-width: .1% * random() ;
+    stroke-opacity: random($limit: 1);
+  }
+}

@@ -79,25 +79,25 @@ const getClassStartingEquipment = async (req: Request, res: Response, next: Next
     let id = req.params.id;
     const sql = `SELECT 
             c.name as class_name,
-            c.hit_die as hit_die
+            c.hit_die as hit_die,
             
-            GROUP_CONCAT(e.name) as equip_name,
-             GROUP_CONCAT(e.cost_unit) as equip_cost_unit,
-             GROUP_CONCAT(e.damage_dice) as equip_damage_dice,
-             GROUP_CONCAT(e.damage_type) as equip_damage_type,
-             GROUP_CONCAT(e.range) as equip_range,
-             GROUP_CONCAT(e.weight) as eqip_weight,
-             GROUP_CONCAT(e.properties_1) as equip_prop_1,
-             GROUP_CONCAT(e.properties_2) as equip_prop_2,
-             GROUP_CONCAT(e.properties_3) as equip_throw_range,
-             GROUP_CONCAT(e.throw_range_long) as equip_throw_range_long,
-             GROUP_CONCAT(e.two_handed_damage_dice) as equip_two_handed_damage_dice,
-             GROUP_CONCAT(e.two_handed_damage_type) as equip_two_handed_damage_type,
-             GROUP_CONCAT(e.range_long) as equip_range_long,
-             GROUP_CONCAT(e.armour_class) as armour_class,
-             GROUP_CONCAT(e.armour_class_dex_bonus) as equip_armour_class_dex_bonus,
-             GROUP_CONCAT(e.str_minimum) as str_minimum,
-             GROUP_CONCAT(e.stealth_disadvantage) as equip_stealth_disadvantage
+            e.name as equip_name,
+            e.cost_unit as equip_cost_unit,
+            e.damage_dice as equip_damage_dice,
+            e.damage_type as equip_damage_type,
+            e.range as equip_range,
+            e.weight as eqip_weight,
+            e.properties_1 as equip_prop_1,
+            e.properties_2 as equip_prop_2,
+            e.properties_3 as equip_throw_range,
+            e.throw_range_long as equip_throw_range_long,
+            e.two_handed_damage_dice as equip_two_handed_damage_dice,
+            e.two_handed_damage_type as equip_two_handed_damage_type,
+            e.range_long as equip_range_long,
+            e.armour_class as armour_class,
+            e.armour_class_dex_bonus as equip_armour_class_dex_bonus,
+            e.str_minimum as str_minimum,
+            e.stealth_disadvantage as equip_stealth_disadvantage
             
             
             FROM classStartingEquipment cse

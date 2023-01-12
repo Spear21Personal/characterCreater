@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { CharcterGenComponent } from './components/charcter-gen/charcter-gen.component';
+import { SvgAnimaitionComponent } from './components/svg-animaition/svg-animaition.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CharcterGenComponent } from './components/charcter-gen/charcter-gen.com
     AppComponent,
     AbilityTileComponent,
     DropDownFormComponent,
-    CharcterGenComponent
+    CharcterGenComponent,
+    SvgAnimaitionComponent
   ],
 
   providers: [],

@@ -1,19 +1,23 @@
-<form [formGroup]="form">
-  <mat-form-field>
-    <mat-label>Races</mat-label>
-    <mat-select formControlName="races">
-      <mat-option *ngFor="let race of races" [value]="race.id">
-        {{race.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Classes</mat-label>
-    <mat-select formControlName="classes">
-      <mat-option *ngFor="let class of classes" [value]="class.id">
-        {{class.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-</form>
+
+<div class="">
+  <form [formGroup]="form">
+    <mat-form-field class="select left">
+      <mat-label>Races</mat-label>
+      <mat-select  formControlName="races">
+        <mat-option *ngFor="let race of races" [value]="race.id">
+          {{race.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="select left" >
+      <mat-label>Classes</mat-label>
+      <mat-select formControlName="classes">
+        <mat-option *ngFor="let class of classes" [value]="class.id">
+          {{class.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+
 
