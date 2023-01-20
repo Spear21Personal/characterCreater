@@ -1,1 +1,33 @@
-<p>charcter-gen works!</p>
+<div class="defaultPadding">
+  <ng-container *ngIf="race.name" @slideInOut class="slide-in-mask">
+    <div class="race card">
+      <div class="defaultPadding">
+        <h2>Race</h2>
+        <h3>{{race.name}}</h3>
+        <p><strong>Alignment:</strong> {{race.alignment}}</p>
+        <p><strong>Speed:</strong> {{race.speed}}</p>
+        <p><strong>Size:</strong> {{race.size}}</p>
+
+        <p>{{race.size_description}}</p>
+        <p><strong>Age:</strong> {{race.age}}</p>
+        <p><strong>Language:</strong> {{race.language_description}}</p>
+        <p *ngIf="race.description"><strong>Description:</strong> {{race.description}}</p>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="class.name" @slideInOut class="slide-in-mask">
+    <div class="class card">
+      <div class="defaultPadding">
+
+        <h2>Class</h2>
+        <h3>{{class.name}}</h3>
+        <p><strong>Hit Die:</strong> {{class.hit_die}}</p>
+        <ng-container *ngIf="class.spellcasting_ability_id">
+          <p><strong>Spell Casting Level:</strong> {{class.spellcasting_level}}</p>
+          <p><strong>Spell Casting Ability:</strong> {{class.spellcasting_ability}}</p>
+        </ng-container>
+
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -55,7 +55,6 @@ const getAllRaces = async (req: Request, res: Response, next: NextFunction) => {
 
 const getRaceById = async (req: Request, res: Response, next: NextFunction) => {
     logging.info(NAMESPACE, "Getting this race");
-    let id = req.params.id;
     const raceRepository = getRepository(Race);
     try {
         await raceRepository.findOne(req.params.id).then((data) => {
@@ -75,7 +74,6 @@ const udpateRace = async (req: Request, res: Response, next: NextFunction) => {
     logging.info(NAMESPACE, "update this race");
     let id = req.params.id;
 
-    //const {  name, strength, alignment, size, maxAge, minAge, speed, description } = req.body;
     const raceRepository = getRepository(Race);
 
     try {

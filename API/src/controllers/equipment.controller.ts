@@ -1,8 +1,17 @@
-import { NextFunction, Request, response, Response } from 'express';
+import {
+    NextFunction,
+    Request,
+    response,
+    Response
+} from 'express';
 import logging from '../config/logging';
-import { Equipment } from '../entity/Equipment.Entity';
-;
-import { CustomRepositoryNotFoundError, getRepository } from 'typeorm';
+import {
+    Equipment
+} from '../entity/Equipment.Entity';;
+import {
+    CustomRepositoryNotFoundError,
+    getRepository
+} from 'typeorm';
 
 const NAMESPACE = "Equipment";
 
@@ -18,7 +27,6 @@ const addEquipment = async (req: Request, res: Response, next: NextFunction) => 
         logging.error(NAMESPACE, 'Error', err);
         return res.status(500).json(err);
     }
-   
 };
 
 const getAllEquipment = async (req: Request, res: Response, next: NextFunction) => {
@@ -49,8 +57,8 @@ const getEquipmentById = async (req: Request, res: Response, next: NextFunction)
         logging.error(NAMESPACE, 'Error', err);
         return res.status(500).json(err);
     }
-   
-  
+
+
 };
 
 const udpateEquipment = async (req: Request, res: Response, next: NextFunction) => {
@@ -70,7 +78,12 @@ const udpateEquipment = async (req: Request, res: Response, next: NextFunction) 
         logging.error(NAMESPACE, 'Error', err);
         return res.status(500).json(err);
     }
-  
+
 };
 
-export default { addEquipment, getAllEquipment, getEquipmentById, udpateEquipment };
+export default {
+    addEquipment,
+    getAllEquipment,
+    getEquipmentById,
+    udpateEquipment
+};

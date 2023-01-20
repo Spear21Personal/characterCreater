@@ -1,40 +1,41 @@
-import { NextFunction, Request, Response } from 'express';
+import {
+    NextFunction,
+    Request,
+    Response,
+    response
+} from 'express';
 import logging from '../config/logging';
-import { Abilities } from '../entity/Abilities.Entity';
-;
-import { CustomRepositoryNotFoundError, getRepository } from 'typeorm';
+import {
+    Abilities
+} from '../entity/Abilities.Entity';;
+import {
+    CustomRepositoryNotFoundError,
+    getRepository
+} from 'typeorm';
 
 const NAMESPACE = "ABILITY";
 
 const addAbility = async (req: Request, res: Response, next: NextFunction) => {
     logging.info(NAMESPACE, "adding a Ability");
     const AbilityRepotory = getRepository(Abilities);
-    const {  name, full_name, description } = req.body
     try {
-        const newAbility = new Abilities();
-        newAbility.name = name;
-        newAbility.full_name = full_name;
-        newAbility.description = description;
-        
-        await AbilityRepotory.save(newAbility);
-
-        return res.status(201).json(newAbility)
+        await AbilityRepotory.insert(req.body);
+        response.json({
+            message: "ability has been inserted"
+        })
     } catch (err) {
         logging.error(NAMESPACE, 'Error', err);
         return res.status(500).json(err);
     }
-   
-  
+
 };
 
 const getAllAbilities = async (req: Request, res: Response, next: NextFunction) => {
     const AbilityRepository = getRepository(Abilities);
     try {
-        logging.info(NAMESPACE, "Getting all Abilities");
-        const abilities = await AbilityRepository.find({
-            select: ['id', 'name', 'full_name', 'description'],
-        });
-        return res.status(200).json(abilities);
+        await AbilityRepository.find().then((data) => {
+            res.status(200).json(data);
+        })
     } catch (err) {
         logging.error(NAMESPACE, 'Error', err);
         return res.status(500).json(err);
@@ -46,47 +47,43 @@ const getAbilityById = async (req: Request, res: Response, next: NextFunction) =
     let id = req.params.id;
     const AbilityRepository = getRepository(Abilities);
     try {
-        const ability =  await AbilityRepository.findOne(id, {
-            select: ['id', 'full_name', 'description'],
-
-        });
-        if (!ability) {
-           const message = 'could not find that Ability';
-           return next(message);
-        }
-
-        return res.status(200).json(ability);
+        await AbilityRepository.findOne(req.params.id).then((data) => {
+            if (!data) {
+                const message = 'could not find that ability';
+                return next(message);
+            }
+            res.status(200).json(data);
+        })
     } catch (err) {
         logging.error(NAMESPACE, 'Error', err);
         return res.status(500).json(err);
     }
-   
-  
+
+
 };
 
 const udpateAbility = async (req: Request, res: Response, next: NextFunction) => {
     logging.info(NAMESPACE, "update this Ability");
     let id = req.params.id;
-    const {  name, full_name, description } = req.body;
     const abilityRepository = getRepository(Abilities);
     try {
-        const ability = await abilityRepository.findOne({where: {id}});
+        const ability = await abilityRepository.findOne(id);
         if (!ability) {
-            const message = 'could not find that Ability';
+            const message = 'could not find that ability';
             return next(message);
-         }
-
-         ability.name = name;
-         ability.full_name = full_name;
-         ability.description = description;
-         await abilityRepository.save(ability);
-
-        return res.status(201).json(ability)
+        }
+        await abilityRepository.save(req.body);
+        return res.status(201).json(req.body)
     } catch (err) {
         logging.error(NAMESPACE, 'Error', err);
         return res.status(500).json(err);
     }
-  
+
 };
 
-export default { addAbility, getAllAbilities, getAbilityById, udpateAbility };
+export default {
+    addAbility,
+    getAllAbilities,
+    getAbilityById,
+    udpateAbility
+};

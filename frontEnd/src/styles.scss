@@ -2,6 +2,7 @@
 @import "./styles/gradient-background";
 @import "./styles/reusable";
 @import "./styles/variables";
+@import "./styles/aniamtions";
 
 * {
   margin: 0;
@@ -45,3 +46,15 @@ h1 {
     opacity: .5;
   }
 
+  .race {
+    position: relative;
+    z-index: 10;
+    top: 0;
+    right: 200px;
+  }
+  .class {
+    position: relative;
+    z-index: 11;
+    top: 0;
+    right: 100px;
+  }

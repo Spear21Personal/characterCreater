@@ -23,7 +23,7 @@ character:any;
 constructor(private rest: RestApiService, private charService: CharacterService) {
   this.charService.currentCharacter.subscribe((character) => {
     this.character = character;
-    console.log(this.character);
+    console.log('chacter is: ', character);
   })
 }
 ngOnInit() {
@@ -31,7 +31,8 @@ ngOnInit() {
     races: new FormControl(),
     classes: new FormControl()
   });
-
+  //this.character = this.charService.getCharacterData();
+  console.log('this Character is: ', this.character);
   this.rest.getRemove(null,'character/dropStart', this.reqParam,'get').subscribe(
     (data: any) => {
       data.forEach((element: any) => {
@@ -47,8 +48,11 @@ ngOnInit() {
 
     }
    );
-   this.form.get('races')?.valueChanges.subscribe((data) => {
-    this.charService.updateData({race: data})
+   this.form.get('races')?.valueChanges.subscribe((id) => {
+    this.charService.getRace(id)
+   })
+   this.form.get('classes')?.valueChanges.subscribe((id) => {
+    this.charService.getClass(id)
    })
 }
 
