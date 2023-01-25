@@ -11,7 +11,7 @@
 }
 
 .main-background {
-   background-image:  url('./assets/wallpaperShadow.jpg');
+   background-image:  url('./assets/main-backgrounnd-one.jpg');
   background-size: cover;
     /* Set rules to fill background */
   min-height: 100%;
@@ -27,11 +27,12 @@
   left: 0;
   }
 h1 {
-  color: white;
+  color: $secondary-color;
 
 }
   .card {
-    background-color: white;
+    background-color: $primary-color;
+    color: $secondary-color;
     border-radius: 5px;
     opacity: .5;
     padding: 5px;
@@ -42,8 +43,10 @@ h1 {
   }
 
   .header {
-    background-color: aliceblue;
-    opacity: .5;
+    background-color: $primary-color;
+    margin-top: 25px;
+    width: 100%;
+    opacity: .9;
   }
 
   .race {
@@ -58,3 +61,24 @@ h1 {
     top: 0;
     right: 100px;
   }
+
+  .button {
+    background-color: $primary-link-color;
+  }
+  .button:hover {
+    background-color: $hover-link-color;
+  }
+  .main-nav {
+    padding: 10px;
+  }
+  .main-nav-links {
+    color: $secondary-color;
+    padding-left: 10px;
+    text-decoration: none;
+  }
+  .main-nav-links:hover {
+    opacity: .8;
+  }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
