@@ -13,6 +13,7 @@ router.get('/get', controller.getAllProficiencies);
 //Create
 router.post('/add', controller.addProficiencies);
 router.get('/get/:id', controller.getProficienciesById);
+router.get('/byClass/:id', controller.getProficienciesByClass);
 router.put('/update/:id', controller.udpateProficiencies) ;
 
 

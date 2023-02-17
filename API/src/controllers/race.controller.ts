@@ -56,8 +56,27 @@ const getAllRaces = async (req: Request, res: Response, next: NextFunction) => {
 const getRaceById = async (req: Request, res: Response, next: NextFunction) => {
     logging.info(NAMESPACE, "Getting this race");
     const raceRepository = getRepository(Race);
+    const _id = req.params.id;
+    const sql = `
+    SELECT 
+    r.name,
+    r.alignment,
+    r.size,
+    r.size_description,
+    r.language_description,
+    r.language_id,
+    r.language_id_2,
+    r.subrace_id,
+    r.ability_bonus_id,
+    r.ability_bonus_value,
+    a.description as ability_description,
+    a.full_name as ability_bonus
+
+    FROM race r LEFT JOIN abilities a ON r.ability_bonus_id = a.id
+    WHERE r.id = ?
+    `
     try {
-        await raceRepository.findOne(req.params.id).then((data) => {
+        await raceRepository.query(sql, [_id]).then((data) => {
             if (!data) {
                 const message = 'could not find that race';
                 return next(message);

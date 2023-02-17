@@ -33,6 +33,8 @@ export class CharacterService {
       subrace_id: 1,
       ability_bonus_id: 1,
       ability_bonus_value: 1,
+      ability_description: '',
+      ability_bonus: '',
     },
     class: {
       name: '',
@@ -51,6 +53,7 @@ export class CharacterService {
       wisdom: 10,
       charisma: 10,
     },
+    proficiencies: [],
     hitPoints: 10,
     armorClass: 1,
     speed: 5,
@@ -81,8 +84,15 @@ export class CharacterService {
       (data: any) => {
        this.updateData({class:data});
        console.log('this should be a class: ', data);
-
+        this.getProficiencies(id);
       }
      );
+  }
+  getProficiencies(id:number) {
+    this.rest.getRemove(null, `proficiencies/byClass/${id}`, this.reqParam,'get').subscribe(
+      (data:any) => {
+        this.updateData({proficiencies:data});
+      }
+    )
   }
 }

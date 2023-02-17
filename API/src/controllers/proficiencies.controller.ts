@@ -59,6 +59,33 @@ const getProficienciesById = async (req: Request, res: Response, next: NextFunct
     }
 };
 
+const getProficienciesByClass = async (req: Request, res: Response, next: NextFunction) => {
+    logging.info(NAMESPACE, "Getting this proficiencies");
+    const proficienciesRepository = getRepository(Proficiencies);
+    const class_id = req.params.id;
+    const sql = `
+    SELECT 
+    p.name,
+    p.type
+
+    
+    FROM proficiencies p
+    LEFT JOIN  classProficiencies cp on p.id = cp.prof_id
+    Where cp.class_id = ${class_id}
+    `
+    try {
+        await proficienciesRepository.query(sql).then((data) => {
+            if (!data) {
+                const message = 'could not find that proficiency';
+                return next(message);
+            }
+            res.status(200).json(data);
+        })
+    } catch (err) {
+        logging.error(NAMESPACE, 'Error', err);
+        return res.status(500).json(err);
+    }
+};
 const udpateProficiencies = async (req: Request, res: Response, next: NextFunction) => {
     logging.info(NAMESPACE, "update this proficiency");
     const proficienciesRepository = getRepository(Proficiencies);
@@ -83,5 +110,6 @@ export default {
     addProficiencies,
     getAllProficiencies,
     getProficienciesById,
+    getProficienciesByClass,
     udpateProficiencies
 };

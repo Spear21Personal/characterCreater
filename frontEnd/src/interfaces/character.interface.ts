@@ -1,3 +1,9 @@
+interface proficiency  {
+  name: string;
+  type: string;
+};
+interface proficiences extends Array<proficiency>{};
+
 export interface Character {
   name: string;
   race: {
@@ -15,6 +21,8 @@ export interface Character {
     subrace_id: number;
     ability_bonus_id: number;
     ability_bonus_value: number;
+    ability_description: string;
+    ability_bonus: string;
   };
   class: {
     name: string;
@@ -33,6 +41,7 @@ export interface Character {
     wisdom: number;
     charisma: number;
   };
+  proficiencies:proficiences;
   hitPoints: number;
   armorClass: number;
   speed: number;

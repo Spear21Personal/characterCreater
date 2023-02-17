@@ -1,30 +1,43 @@
-<div class="defaultPadding">
-  <ng-container *ngIf="race.name" @slideInOut class="slide-in-mask">
-    <div class="race card">
+<div class="defaultPadding row">
+  <ng-container *ngIf="race" @slideInOut class="slide-in-mask">
+    <div class="left race card col-sm-12 col-md-6">
       <div class="defaultPadding">
         <h2>Race</h2>
         <h3>{{race.name}}</h3>
         <p><strong>Alignment:</strong> {{race.alignment}}</p>
         <p><strong>Speed:</strong> {{race.speed}}</p>
         <p><strong>Size:</strong> {{race.size}}</p>
-
         <p>{{race.size_description}}</p>
         <p><strong>Age:</strong> {{race.age}}</p>
         <p><strong>Language:</strong> {{race.language_description}}</p>
         <p *ngIf="race.description"><strong>Description:</strong> {{race.description}}</p>
+        <ng-container *ngIf="race.ability_bonus_id">
+          <h3>Modfiers</h3>
+          <p><strong>Ability Modifier:</strong> {{race.ability_bonus}}</p>
+          <p><strong>Description:</strong> {{race.ability_desciption}}</p>
+          <p><strong>Bonus:</strong> {{race.ability_bonus_value}}</p>
+        </ng-container>
+
       </div>
     </div>
   </ng-container>
   <ng-container *ngIf="class.name" @slideInOut class="slide-in-mask">
-    <div class="class card">
+    <div class="left class card col-sm-12 col-md-6">
       <div class="defaultPadding">
-
         <h2>Class</h2>
         <h3>{{class.name}}</h3>
         <p><strong>Hit Die:</strong> {{class.hit_die}}</p>
         <ng-container *ngIf="class.spellcasting_ability_id">
           <p><strong>Spell Casting Level:</strong> {{class.spellcasting_level}}</p>
           <p><strong>Spell Casting Ability:</strong> {{class.spellcasting_ability}}</p>
+        </ng-container>
+        <ng-container *ngIf="proficiencies">
+          <h3>Proficiences</h3>
+          <ng-container *ngFor="let proficiency of proficiencies">
+            <p><strong>Name:</strong>{{proficiency.name}}</p>
+            <p><strong>Type:</strong>{{proficiency.type}}</p>
+          </ng-container>
+
         </ng-container>
 
       </div>

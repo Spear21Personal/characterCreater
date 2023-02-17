@@ -1237,6 +1237,65 @@
                 }
             }
         },
+        "/api/proficiencies/byClass/{id}": {
+            "get": {
+        
+                "tags": [
+                    "Proficiencies"
+                ],
+                "summary": "get individual RaceMproficienciesodifier by ID",
+                "parameters": [{
+                    "$ref": "#/components/parameters/pathID"
+        
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "./swaggerfiles/proficiencies.json#/schemas"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
 
         "/api/equipment": {
             "post": {

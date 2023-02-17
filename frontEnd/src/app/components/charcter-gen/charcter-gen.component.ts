@@ -1,7 +1,19 @@
-import { Component } from '@angular/core';
-import { Character } from 'src/interfaces/character.interface';
-import {CharacterService} from '../../../services/character.service';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import {
+  Component
+} from '@angular/core';
+import {
+  Character
+} from 'src/interfaces/character.interface';
+import {
+  CharacterService
+} from '../../../services/character.service';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate
+} from '@angular/animations';
 
 
 @Component({
@@ -10,41 +22,46 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   styleUrls: ['./charcter-gen.component.scss'],
   animations: [
     trigger('slideInFromTopRight', [
-        state('in', style({
-            transform: 'translate3d(0, 0, 0)',
-            opacity: 1
-        })),
-        transition(':enter', [
-            style({
-                transform: 'translate3d(100%, -100%, 0)',
-                opacity: 0
-            }),
-            animate('0.5s ease-in-out')
-        ]),
-        transition(':leave', [
-            animate('0.5s ease-in-out', style({
-                transform: 'translate3d(100%, -100%, 0)',
-                opacity: 0
-            }))
-        ])
+      state('in', style({
+        transform: 'translate3d(0, 0, 0)',
+        opacity: 1
+      })),
+      transition(':enter', [
+        style({
+          transform: 'translate3d(100%, -100%, 0)',
+          opacity: 0
+        }),
+        animate('0.5s ease-in-out')
+      ]),
+      transition(':leave', [
+        animate('0.5s ease-in-out', style({
+          transform: 'translate3d(100%, -100%, 0)',
+          opacity: 0
+        }))
+      ])
     ])
-]
+  ]
 })
 export class CharcterGenComponent {
 
 
- character!: Character;
- race:any;
- class:any;
+  character!: Character;
+  race: any;
+  class: any;
+  proficiencies!: any;
 
 
-constructor(private characterService: CharacterService){
-  this.characterService.currentCharacter.subscribe(data => {
-    this.character = data;
-    this.race = data.race;
-    this.class = data.class;
-  });
-}
+  constructor(private characterService: CharacterService) {
+    this.characterService.currentCharacter.subscribe(data => {
+      this.character = data;
+      this.race = data.race;
+      this.class = data.class;
+      this.proficiencies = data.proficiencies;
+      this.race = this.race[0];
+
+      console.log('current race', this.race);
+    });
+  }
   generateCharacter() {
     // this.character.race = this.races[Math.floor(Math.random() * this.races.length)];
     // this.character.class = this.classes[Math.floor(Math.random() * this.classes.length)];
