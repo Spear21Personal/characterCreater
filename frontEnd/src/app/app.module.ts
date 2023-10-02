@@ -13,6 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { CharcterGenComponent } from './components/charcter-gen/charcter-gen.component';
 import { SvgAnimaitionComponent } from './components/svg-animaition/svg-animaition.component';
 import { CharacterSheetComponent } from './components/character-sheet/character-sheet.component';
+import { StoreModule } from '@ngrx/store';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CharacterSheetComponent } from './components/character-sheet/character-
     MatFormFieldModule,
     MatSelectModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({}, {})
   ],
   declarations: [
     AppComponent,
