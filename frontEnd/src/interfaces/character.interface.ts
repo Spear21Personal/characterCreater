@@ -1,8 +1,8 @@
 interface proficiency  {
   name: string;
   type: string;
-};
-interface proficiences extends Array<proficiency>{};
+}
+interface proficiences extends Array<proficiency>{}
 
 export interface Character {
   name: string;

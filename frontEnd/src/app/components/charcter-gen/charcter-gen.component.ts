@@ -14,33 +14,36 @@ import {
   transition,
   animate
 } from '@angular/animations';
+import { NgIf, NgFor } from '@angular/common';
 
 
 @Component({
-  selector: 'app-charcter-gen',
-  templateUrl: './charcter-gen.component.html',
-  styleUrls: ['./charcter-gen.component.scss'],
-  animations: [
-    trigger('slideInFromTopRight', [
-      state('in', style({
-        transform: 'translate3d(0, 0, 0)',
-        opacity: 1
-      })),
-      transition(':enter', [
-        style({
-          transform: 'translate3d(100%, -100%, 0)',
-          opacity: 0
-        }),
-        animate('0.5s ease-in-out')
-      ]),
-      transition(':leave', [
-        animate('0.5s ease-in-out', style({
-          transform: 'translate3d(100%, -100%, 0)',
-          opacity: 0
-        }))
-      ])
-    ])
-  ]
+    selector: 'app-charcter-gen',
+    templateUrl: './charcter-gen.component.html',
+    styleUrls: ['./charcter-gen.component.scss'],
+    animations: [
+        trigger('slideInFromTopRight', [
+            state('in', style({
+                transform: 'translate3d(0, 0, 0)',
+                opacity: 1
+            })),
+            transition(':enter', [
+                style({
+                    transform: 'translate3d(100%, -100%, 0)',
+                    opacity: 0
+                }),
+                animate('0.5s ease-in-out')
+            ]),
+            transition(':leave', [
+                animate('0.5s ease-in-out', style({
+                    transform: 'translate3d(100%, -100%, 0)',
+                    opacity: 0
+                }))
+            ])
+        ])
+    ],
+    standalone: true,
+    imports: [NgIf, NgFor]
 })
 export class CharcterGenComponent {
 

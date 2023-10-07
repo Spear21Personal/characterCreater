@@ -8,8 +8,8 @@ describe('AbilityTileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AbilityTileComponent ]
-    })
+    imports: [AbilityTileComponent]
+})
     .compileComponents();
   });
 

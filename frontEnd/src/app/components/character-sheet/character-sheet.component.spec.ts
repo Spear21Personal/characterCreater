@@ -8,8 +8,8 @@ describe('CharacterSheetComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CharacterSheetComponent ]
-    })
+    imports: [CharacterSheetComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(CharacterSheetComponent);

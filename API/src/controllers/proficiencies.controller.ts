@@ -7,7 +7,7 @@ import {
 import logging from '../config/logging';
 import {
     Proficiencies
-} from '../entity/Proficiencies.Entity';;
+} from '../entity/Proficiencies.Entity';
 import {
     CustomRepositoryNotFoundError,
     getRepository

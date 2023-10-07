@@ -7,7 +7,7 @@ import {
 import logging from '../config/logging';
 import {
     Alignment
-} from '../entity/Alignmennt.Entity';;
+} from '../entity/Alignmennt.Entity';
 import {
     CustomRepositoryNotFoundError,
     getRepository

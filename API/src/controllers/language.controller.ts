@@ -7,7 +7,7 @@ import {
 import logging from '../config/logging';
 import {
     Language
-} from '../entity/Language.Entity';;
+} from '../entity/Language.Entity';
 import {
     CustomRepositoryNotFoundError,
     getRepository

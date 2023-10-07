@@ -7,7 +7,7 @@ import {
 import logging from '../config/logging';
 import {
     RaceModifier
-} from '../entity/RaceModifier.Entity';;
+} from '../entity/RaceModifier.Entity';
 import {
     CustomRepositoryNotFoundError,
     getRepository

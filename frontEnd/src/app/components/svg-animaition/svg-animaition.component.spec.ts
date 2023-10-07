@@ -8,8 +8,8 @@ describe('SvgAnimaitionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SvgAnimaitionComponent ]
-    })
+    imports: [SvgAnimaitionComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(SvgAnimaitionComponent);

@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { race } from 'rxjs';
 import { RestApiService } from 'src/services/rest-api.service';
 import { CharacterService } from '../../../services/character.service';
+import { MatOptionModule } from '@angular/material/core';
+import { NgFor } from '@angular/common';
 
 
 @Component({
-  selector: 'app-drop-down-form',
-  templateUrl: './drop-down-form.component.html',
-  styleUrls: ['./drop-down-form.component.scss']
+    selector: 'app-drop-down-form',
+    templateUrl: './drop-down-form.component.html',
+    styleUrls: ['./drop-down-form.component.scss'],
+    standalone: true,
+    imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatSelectModule, NgFor, MatOptionModule]
 })
 export class DropDownFormComponent {
 
